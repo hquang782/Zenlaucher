@@ -1,0 +1,17 @@
+<resources>
+    <string name="settings_label">Cài đặt Zen</string>
+    <string name="search_hint">Tìm app</string>
+    <string name="hide">Ẩn</string>
+    <string name="app_info">Thông tin app</string>
+    <string name="set_default_home">Đặt làm màn hình chính</string>
+    <string name="hidden_title">App đã ẩn (chạm để hiện lại)</string>
+    <string name="no_hidden">Chưa ẩn app nào</string>
+    <string name="cannot_open">Không mở được %1$s</string>
+    <string name="swipe_hint">Vuốt lên để xem tất cả ứng dụng</string>
+    <string name="pin_hint">Nhấn giữ một app trong danh sách để ghim lên đây</string>
+    <string name="pin">Ghim lên Home</string>
+    <string name="unpin">Bỏ ghim</string>
+    <string name="pins_full">Chỉ ghim được tối đa %1$d app</string>
+    <string name="cd_notifications">Thông báo</string>
+    <string name="cd_all_apps">Tất cả ứng dụng</string>
+</resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp">
+
+    <!-- Top bar: brand · time // battery · settings -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.75"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_terminal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/brand"
+                android:textAppearance="@style/TextAppearance.Zen.Mono" />
+        </LinearLayout>
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm"
+            android:textAppearance="@style/TextAppearance.Zen.Mono" />
+
+        <TextView
+            android:id="@+id/battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Zen.Mono" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/settings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="-14dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/settings_label"
+                android:src="@drawable/ic_settings" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Clock + date -->
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:format12Hour="h:mm"
+        android:format24Hour="HH:mm"
+        android:includeFontPadding="false"
+        android:textAppearance="@style/TextAppearance.Zen.Clock" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:format12Hour="EEEE, d MMMM"
+        android:format24Hour="EEEE, d MMMM"
+        android:textAppearance="@style/TextAppearance.Zen.Mono" />
+
+    <!-- Pinned apps, vertically centered in the free space -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pinnedList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/pinHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/pin_hint"
+            android:textAppearance="@style/TextAppearance.Zen.MonoSmall"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- Swipe-up hint -->
+    <LinearLayout
+        android:id="@+id/swipeHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_keyboard_arrow_up"
+                app:tint="@color/outline" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/swipe_hint"
+                android:textAppearance="@style/TextAppearance.Zen.MonoSmall" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.4"
+            android:background="@drawable/pill" />
+    </LinearLayout>
+
+    <!-- Bottom nav: notifications · search · all apps -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/navNotifications"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_notifications"
+            android:src="@drawable/ic_keyboard_arrow_down"
+            app:tint="@color/outline" />
+
+        <ImageButton
+            android:id="@+id/navSearch"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/search_hint"
+            android:src="@drawable/ic_search"
+            app:tint="@color/primary" />
+
+        <ImageButton
+            android:id="@+id/navAllApps"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_all_apps"
+            android:src="@drawable/ic_keyboard_arrow_up"
+            app:tint="@color/outline" />
+    </LinearLayout>
+</LinearLayout>

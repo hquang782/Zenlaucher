@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name" translatable="false">ZenLauncher</string>
+    <string name="settings_label">Zen Settings</string>
+    <string name="search_hint">Search apps</string>
+    <string name="hide">Hide</string>
+    <string name="app_info">App info</string>
+    <string name="set_default_home">Set as default home</string>
+    <string name="hidden_title">Hidden apps (tap to show again)</string>
+    <string name="no_hidden">No hidden apps</string>
+    <string name="cannot_open">Cannot open %1$s</string>
+    <string name="brand" translatable="false">ZEN</string>
+    <string name="battery" translatable="false">\u0020// %1$d%% PWR</string>
+    <string name="swipe_hint">Swipe up for all apps</string>
+    <string name="pin_hint">Long-press an app in the list to pin it here</string>
+    <string name="pin">Pin to home</string>
+    <string name="unpin">Unpin</string>
+    <string name="pins_full">You can pin up to %1$d apps</string>
+    <string name="cd_notifications">Notifications</string>
+    <string name="cd_all_apps">All apps</string>
+</resources>

@@ -1,0 +1,40 @@
+<resources>
+    <!-- Dark only, as designed in Stitch. -->
+    <style name="Theme.Zen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:textColorPrimary">@color/on_surface</item>
+        <item name="android:textColorSecondary">@color/on_surface_variant</item>
+        <item name="android:textColorHint">@color/outline</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorControlNormal">@color/outline_variant</item>
+        <item name="colorControlActivated">@color/primary</item>
+    </style>
+
+    <style name="TextAppearance.Zen.Clock" parent="">
+        <item name="android:fontFamily">@font/geist_extralight</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="TextAppearance.Zen.Mono" parent="">
+        <item name="android:fontFamily">@font/jetbrains_mono_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textColor">@color/on_surface_variant</item>
+    </style>
+
+    <style name="TextAppearance.Zen.MonoSmall" parent="">
+        <item name="android:fontFamily">@font/jetbrains_mono_medium</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textColor">@color/outline</item>
+    </style>
+
+    <style name="TextAppearance.Zen.App" parent="">
+        <item name="android:fontFamily">@font/geist_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+</resources>
