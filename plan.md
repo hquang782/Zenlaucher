@@ -29,7 +29,8 @@
 - Không bao giờ chặn: cuộc gọi, báo thức, `CATEGORY_SYSTEM`, thông báo không gạt được, `android`/`systemui`, chính ZenLauncher
 - DND ưu tiên qua `requestInterruptionFilter` của listener → chỉ cần quyền Truy cập thông báo, không cần `ACCESS_NOTIFICATION_POLICY`; tắt Zen trả về chế độ DND trước đó
 
-### Module 3: Hiển thị (đợt 3)
+### Module 3: Hiển thị (đợt 3 — xong)
+- Hai công tắc trong Settings › Hiển thị (`DisplayTweaks`); tắt thì trả lại hiệu chỉnh màu và tốc độ hiệu ứng cũ của người dùng
 - Grayscale: `Settings.Secure` `accessibility_display_daltonizer_enabled=1`, `accessibility_display_daltonizer=0`
 - Tắt animation: `Settings.Global` `window_animation_scale`, `transition_animation_scale`, `animator_duration_scale` = 0
 - Cả hai cần `WRITE_SECURE_SETTINGS`, user cấp 1 lần: `adb shell pm grant com.zen.launcher android.permission.WRITE_SECURE_SETTINGS`

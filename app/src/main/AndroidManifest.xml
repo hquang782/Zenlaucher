@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Package visibility (Android 11+): see launchable apps without QUERY_ALL_PACKAGES. -->
     <!-- Swipe down / ↓ on Home opens the notification shade. -->
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <!-- Grayscale and animation switches. Only adb can grant it: the app shows the command. -->
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <queries>
         <intent>

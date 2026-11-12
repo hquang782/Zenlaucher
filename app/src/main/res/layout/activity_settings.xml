@@ -45,6 +45,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:text="@string/display_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/grayscaleSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="@string/grayscale" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/animationsSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="@string/no_animations" />
+
+    <LinearLayout
+        android:id="@+id/adbHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adb_hint"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/adbCommand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Zen.MonoSmall" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="@string/hidden_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 

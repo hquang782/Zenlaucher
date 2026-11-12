@@ -26,4 +26,9 @@
     <string name="allowed_apps">App được phép (%1$d)</string>
     <string name="allowed_title">App được gửi thông báo</string>
     <string name="save">Lưu</string>
+    <string name="display_title">Hiển thị</string>
+    <string name="grayscale">Màn hình đen trắng</string>
+    <string name="no_animations">Tắt hiệu ứng chuyển động</string>
+    <string name="adb_hint">Cần cấp quyền một lần. Cắm điện thoại vào máy tính, bật gỡ lỗi USB rồi chạy lệnh (chạm để sao chép):</string>
+    <string name="copied">Đã sao chép lệnh</string>
 </resources>

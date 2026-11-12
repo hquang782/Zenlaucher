@@ -30,4 +30,9 @@
     <string name="allowed_apps">Allowed apps (%1$d)</string>
     <string name="allowed_title">Apps allowed to notify</string>
     <string name="save">Save</string>
+    <string name="display_title">Display</string>
+    <string name="grayscale">Grayscale screen</string>
+    <string name="no_animations">Turn off animations</string>
+    <string name="adb_hint">These need a one-time permission. Connect the phone to a computer with USB debugging on and run (tap to copy):</string>
+    <string name="copied">Command copied</string>
 </resources>
