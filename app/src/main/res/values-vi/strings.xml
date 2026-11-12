@@ -11,7 +11,19 @@
     <string name="pin_hint">Nhấn giữ một app trong danh sách để ghim lên đây</string>
     <string name="pin">Ghim lên Home</string>
     <string name="unpin">Bỏ ghim</string>
+    <string name="move_up">Chuyển lên</string>
+    <string name="move_down">Chuyển xuống</string>
     <string name="pins_full">Chỉ ghim được tối đa %1$d app</string>
     <string name="cd_notifications">Thông báo</string>
     <string name="cd_all_apps">Tất cả ứng dụng</string>
+    <string name="zen_mode">Chế độ Zen</string>
+    <string name="zen_summary">Bật Không làm phiền (chỉ ưu tiên) và gạt bỏ thông báo từ app không được phép. Cuộc gọi, báo thức và thông báo đang chạy luôn được giữ.</string>
+    <string name="zen_off">ZEN MODE: TẮT</string>
+    <string name="zen_on">ZEN MODE: BẬT</string>
+    <plurals name="zen_on_blocked">
+        <item quantity="other">ZEN MODE: BẬT // ĐÃ CHẶN %1$d</item>
+    </plurals>
+    <string name="allowed_apps">App được phép (%1$d)</string>
+    <string name="allowed_title">App được gửi thông báo</string>
+    <string name="save">Lưu</string>
 </resources>

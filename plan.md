@@ -23,9 +23,11 @@
 - Đặt làm Home: intent-filter `HOME` + nút mở màn chọn Home mặc định
 - Lưu trạng thái ẩn bằng SharedPreferences (không Room)
 
-### Module 2: Thông báo & DND (đợt 2)
-- `NotificationListenerService`: `cancelNotification` cho app không nằm trong whitelist
-- DND priority mode qua `NotificationManager.setInterruptionFilter` (quyền `ACCESS_NOTIFICATION_POLICY`) — thay cho "chỉ nhận cuộc gọi"
+### Module 2: Thông báo & DND (đợt 2 — xong)
+- Một công tắc "Chế độ Zen" (dòng chữ trên Home + công tắc trong Settings)
+- `ZenListener` (`NotificationListenerService`): gạt thông báo của app ngoài danh sách cho phép; đếm số đã chặn, Home hiển thị
+- Không bao giờ chặn: cuộc gọi, báo thức, `CATEGORY_SYSTEM`, thông báo không gạt được, `android`/`systemui`, chính ZenLauncher
+- DND ưu tiên qua `requestInterruptionFilter` của listener → chỉ cần quyền Truy cập thông báo, không cần `ACCESS_NOTIFICATION_POLICY`; tắt Zen trả về chế độ DND trước đó
 
 ### Module 3: Hiển thị (đợt 3)
 - Grayscale: `Settings.Secure` `accessibility_display_daltonizer_enabled=1`, `accessibility_display_daltonizer=0`
@@ -45,7 +47,7 @@
 | Dọn RAM | `trimMemory`/`getMyMemoryState` chỉ tác động app mình; Play coi "RAM cleaner" là gây hiểu lầm |
 | Chặn auto-start | Không có API công khai, phải Shizuku + appops |
 | Shizuku | `pm grant WRITE_SECURE_SETTINGS` đủ cho grayscale + animation |
-| Room cache list app | `LauncherApps` là nguồn dữ liệu đúng; cache gây lệch |
+| Room cache list app | Chỉ lưu file text trong `no_backup` để hiển thị lúc khởi động lạnh; `LauncherApps` vẫn là nguồn đúng |
 | BootReceiver | Hệ thống tự mở Home và tự bind NotificationListener |
 | Accessibility (Recent/Grayscale/chặn app) | Phát hành Play; grayscale không làm được bằng Accessibility |
 | Widget "One-tap Optimize", Paging, tầng domain | Không cần cho ~200 app |

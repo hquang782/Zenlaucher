@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.SharedPreferences
 import android.os.BatteryManager
 import android.os.Bundle
 import android.view.GestureDetector
@@ -31,6 +32,9 @@ class HomeActivity : AppCompatActivity() {
         onLongClick = { app, view -> actions.showMenu(app, view) },
     )
     private lateinit var gestures: GestureDetector
+    private lateinit var zen: ZenMode
+    // A field: SharedPreferences holds listeners weakly. Fires when ZenListener counts a block.
+    private val onZenChange = SharedPreferences.OnSharedPreferenceChangeListener { _, _ -> renderZen() }
 
     private val batteryReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -47,7 +51,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.root.padForSystemBars()
         repo = AppRepository(this)
-        actions = AppActions(this, repo, installedApps = { allApps }, onChanged = ::render)
+        actions = AppActions(this, repo, installedApps = { allApps }, onChanged = ::render, canReorder = true)
+
+        zen = ZenMode(this)
+        binding.zenToggle.setOnClickListener { zen.setEnabled(!zen.active) }
 
         binding.pinnedList.adapter = adapter
         binding.pinnedList.itemAnimator = null
@@ -83,15 +90,18 @@ class HomeActivity : AppCompatActivity() {
         ContextCompat.registerReceiver(
             this, batteryReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED), ContextCompat.RECEIVER_EXPORTED,
         )
+        zen.prefs.registerOnSharedPreferenceChangeListener(onZenChange)
     }
 
     override fun onResume() {
         super.onResume()
         render() // pins or hidden apps may have changed in the drawer or Settings
+        renderZen() // notification access may have been granted or revoked
     }
 
     override fun onStop() {
         unregisterReceiver(batteryReceiver)
+        zen.prefs.unregisterOnSharedPreferenceChangeListener(onZenChange)
         super.onStop()
     }
 
@@ -119,6 +129,14 @@ class HomeActivity : AppCompatActivity() {
         adapter.submitList(pinned)
         // Before the first load finishes we cannot tell "no pins" from "not loaded yet".
         binding.pinHint.isVisible = pinned.isEmpty() && allApps.isNotEmpty()
+    }
+
+    private fun renderZen() {
+        binding.zenToggle.text = when {
+            !zen.active -> getString(R.string.zen_off)
+            zen.blocked == 0 -> getString(R.string.zen_on)
+            else -> resources.getQuantityString(R.plurals.zen_on_blocked, zen.blocked, zen.blocked)
+        }
     }
 
     private fun openDrawer(search: Boolean) {

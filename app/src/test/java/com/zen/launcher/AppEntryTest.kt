@@ -54,6 +54,32 @@ class AppEntryTest {
     }
 
     @Test
+    fun `movePin swaps with the nearest visible pin and keeps the rest in place`() {
+        val pinned = listOf("a#0", "hid#0", "b#0", "c#0")
+        val visible = setOf("a#0", "b#0", "c#0")
+        assertEquals(listOf("b#0", "hid#0", "a#0", "c#0"), movePin(pinned, "b#0", up = true, visible))
+        assertEquals(listOf("a#0", "hid#0", "c#0", "b#0"), movePin(pinned, "b#0", up = false, visible))
+    }
+
+    @Test
+    fun `movePin at either end or for an unknown key changes nothing`() {
+        val pinned = listOf("a#0", "b#0")
+        val visible = pinned.toSet()
+        assertEquals(pinned, movePin(pinned, "a#0", up = true, visible))
+        assertEquals(pinned, movePin(pinned, "b#0", up = false, visible))
+        assertEquals(pinned, movePin(pinned, "x#0", up = true, visible))
+    }
+
+    @Test
+    fun `app list survives encode and decode, and tabs or line breaks in labels cannot break it`() {
+        val odd = AppEntry("Bad\tlabel\nhere\rnow", "com.odd", "com.odd/.Main#0")
+        val decoded = decodeApps(encodeApps(all + odd))
+        assertEquals(all + odd.copy(label = "Bad label here now"), decoded)
+        assertEquals(emptyList<AppEntry>(), decodeApps(""))
+        assertEquals(emptyList<AppEntry>(), decodeApps("garbage line"))
+    }
+
+    @Test
     fun `hidden apps lists only hidden entries, sorted`() {
         assertEquals(listOf(phone, zalo), hiddenApps(all, setOf("zalo#0", "dialer#0", "gone#0")))
     }

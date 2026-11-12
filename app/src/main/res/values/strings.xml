@@ -14,7 +14,20 @@
     <string name="pin_hint">Long-press an app in the list to pin it here</string>
     <string name="pin">Pin to home</string>
     <string name="unpin">Unpin</string>
+    <string name="move_up">Move up</string>
+    <string name="move_down">Move down</string>
     <string name="pins_full">You can pin up to %1$d apps</string>
     <string name="cd_notifications">Notifications</string>
     <string name="cd_all_apps">All apps</string>
+    <string name="zen_mode">Zen mode</string>
+    <string name="zen_summary">Do Not Disturb (priority only), and notifications from apps not allowed are dismissed. Calls, alarms and ongoing notifications always pass.</string>
+    <string name="zen_off">ZEN MODE: OFF</string>
+    <string name="zen_on">ZEN MODE: ON</string>
+    <plurals name="zen_on_blocked">
+        <item quantity="one">ZEN MODE: ON // %1$d BLOCKED</item>
+        <item quantity="other">ZEN MODE: ON // %1$d BLOCKED</item>
+    </plurals>
+    <string name="allowed_apps">Allowed apps (%1$d)</string>
+    <string name="allowed_title">Apps allowed to notify</string>
+    <string name="save">Save</string>
 </resources>

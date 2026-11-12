@@ -20,6 +20,27 @@
         android:layout_marginTop="16dp"
         android:text="@string/set_default_home" />
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/zenSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:minHeight="48dp"
+        android:text="@string/zen_mode"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zen_summary"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <Button
+        android:id="@+id/allowedApps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

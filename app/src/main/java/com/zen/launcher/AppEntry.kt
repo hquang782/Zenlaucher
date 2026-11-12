@@ -41,3 +41,22 @@ fun togglePin(pinned: List<String>, key: String, installed: Set<String>): List<S
         else -> live + key
     }
 }
+
+/** Swaps [key] with the nearest [visible] pin above or below it; pins the user cannot see stay put. */
+fun movePin(pinned: List<String>, key: String, up: Boolean, visible: Set<String>): List<String> {
+    val from = pinned.indexOf(key)
+    if (from < 0) return pinned
+    val range = if (up) (from - 1 downTo 0) else (from + 1 until pinned.size)
+    val to = range.firstOrNull { pinned[it] in visible } ?: return pinned
+    return pinned.toMutableList().apply { this[from] = this[to].also { this[to] = key } }
+}
+
+private val separators = Regex("[\t\r\n]")
+
+/** One app per line, fields tab-separated. Keys and package names never contain tabs or line breaks. */
+fun encodeApps(apps: List<AppEntry>): String =
+    apps.joinToString("\n") { "${separators.replace(it.label, " ")}\t${it.packageName}\t${it.key}" }
+
+fun decodeApps(text: String): List<AppEntry> = text.lineSequence().mapNotNull { line ->
+    line.split('\t').takeIf { it.size == 3 }?.let { AppEntry(it[0], it[1], it[2]) }
+}.toList()

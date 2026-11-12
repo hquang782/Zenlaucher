@@ -84,6 +84,18 @@
         android:format24Hour="EEEE, d MMMM"
         android:textAppearance="@style/TextAppearance.Zen.Mono" />
 
+    <!-- Tap to turn Zen mode on or off -->
+    <TextView
+        android:id="@+id/zenToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-8dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:paddingHorizontal="8dp"
+        android:textAppearance="@style/TextAppearance.Zen.MonoSmall" />
+
     <!-- Pinned apps, vertically centered in the free space -->
     <FrameLayout
         android:layout_width="match_parent"
