@@ -35,4 +35,22 @@
     <string name="no_animations">Turn off animations</string>
     <string name="adb_hint">These need a one-time permission. Connect the phone to a computer with USB debugging on and run (tap to copy):</string>
     <string name="copied">Command copied</string>
+    <string name="focus_title">Focus mode</string>
+    <string name="focus_switch">Lock apps on a schedule</string>
+    <plurals name="focus_summary">
+        <item quantity="one">During locked hours, opening the chosen apps from ZenLauncher makes you wait %1$d second first.</item>
+        <item quantity="other">During locked hours, opening the chosen apps from ZenLauncher makes you wait %1$d seconds first.</item>
+    </plurals>
+    <string name="focus_days_title">Locked on these days</string>
+    <string name="focus_time">Hours: %1$s – %2$s</string>
+    <string name="focus_start">Start</string>
+    <string name="focus_end">End</string>
+    <string name="focus_days">Days: %1$s</string>
+    <string name="focus_apps">Locked apps (%1$d)</string>
+    <string name="focus_apps_title">Apps locked during focus hours</string>
+    <string name="locked_title">%1$s is locked until %2$s</string>
+    <string name="locked_message">Take a breath. Do you really need it right now?</string>
+    <string name="open_anyway">Open anyway</string>
+    <string name="open_anyway_in">Open anyway (%1$d)</string>
+    <string name="close">Close</string>
 </resources>

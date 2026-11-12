@@ -4,7 +4,10 @@ import android.graphics.Rect
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 
 /** Tap and long-press behavior shared by app rows on Home and in the drawer. */
 class AppActions(
@@ -17,8 +20,17 @@ class AppActions(
 ) {
     val hidden = HiddenApps(activity)
     val favorites = Favorites(activity)
+    private val focus = FocusMode(activity)
 
     fun launch(app: AppEntry, view: View): Boolean {
+        if (focus.locks(app.packageName)) {
+            confirmLocked(app, view)
+            return false
+        }
+        return openNow(app, view)
+    }
+
+    private fun openNow(app: AppEntry, view: View): Boolean {
         val ok = repo.launch(app.key, view.boundsOnScreen())
         if (!ok) toast(activity.getString(R.string.cannot_open, app.label))
         return ok
@@ -56,6 +68,38 @@ class AppActions(
         }
     }
 
+    /** "Open anyway" unlocks after a pause: enough to change your mind, still a way out when it matters. */
+    private fun confirmLocked(app: AppEntry, view: View) {
+        val dialog = AlertDialog.Builder(activity)
+            .setTitle(activity.getString(R.string.locked_title, app.label, formatMinutes(activity, focus.end)))
+            .setMessage(R.string.locked_message)
+            .setPositiveButton(R.string.open_anyway) { _, _ -> openNow(app, view) }
+            .setNegativeButton(R.string.close, null)
+            .show()
+        val button = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        button.isEnabled = false
+        var left = OPEN_ANYWAY_DELAY_SECONDS
+        val tick = object : Runnable {
+            override fun run() {
+                if (left == 0) {
+                    button.isEnabled = true
+                    button.setText(R.string.open_anyway)
+                } else {
+                    button.text = activity.getString(R.string.open_anyway_in, left--)
+                    button.postDelayed(this, 1000)
+                }
+            }
+        }
+        tick.run()
+        // The drawer finishes itself in onStop: close the dialog with it instead of leaking its window.
+        val closeOnStop = LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_STOP) dialog.dismiss() }
+        activity.lifecycle.addObserver(closeOnStop)
+        dialog.setOnDismissListener {
+            button.removeCallbacks(tick)
+            activity.lifecycle.removeObserver(closeOnStop)
+        }
+    }
+
     private fun PopupMenu.addMoveItems(key: String) {
         fun visibleOrder() = pinnedApps(installedApps(), favorites.all(), hidden.all()).map { it.key }
         val order = visibleOrder()
@@ -71,6 +115,10 @@ class AppActions(
     }
 
     private fun toast(text: String) = Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
+
+    companion object {
+        const val OPEN_ANYWAY_DELAY_SECONDS = 10
+    }
 
     private fun View.boundsOnScreen(): Rect {
         val xy = IntArray(2).also(::getLocationOnScreen)

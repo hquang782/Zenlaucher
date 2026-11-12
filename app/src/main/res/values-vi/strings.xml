@@ -31,4 +31,21 @@
     <string name="no_animations">Tắt hiệu ứng chuyển động</string>
     <string name="adb_hint">Cần cấp quyền một lần. Cắm điện thoại vào máy tính, bật gỡ lỗi USB rồi chạy lệnh (chạm để sao chép):</string>
     <string name="copied">Đã sao chép lệnh</string>
+    <string name="focus_title">Tập trung</string>
+    <string name="focus_switch">Khoá app theo giờ</string>
+    <plurals name="focus_summary">
+        <item quantity="other">Trong giờ khoá, mở các app đã chọn từ ZenLauncher phải chờ %1$d giây.</item>
+    </plurals>
+    <string name="focus_days_title">Khoá vào các ngày</string>
+    <string name="focus_time">Giờ khoá: %1$s – %2$s</string>
+    <string name="focus_start">Bắt đầu</string>
+    <string name="focus_end">Kết thúc</string>
+    <string name="focus_days">Ngày: %1$s</string>
+    <string name="focus_apps">App bị khoá (%1$d)</string>
+    <string name="focus_apps_title">App bị khoá trong giờ tập trung</string>
+    <string name="locked_title">%1$s bị khoá đến %2$s</string>
+    <string name="locked_message">Hít thở một chút. Bạn có thật sự cần mở nó lúc này?</string>
+    <string name="open_anyway">Vẫn mở</string>
+    <string name="open_anyway_in">Vẫn mở (%1$d)</string>
+    <string name="close">Đóng</string>
 </resources>

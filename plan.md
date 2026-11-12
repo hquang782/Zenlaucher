@@ -36,11 +36,10 @@
 - Cả hai cần `WRITE_SECURE_SETTINGS`, user cấp 1 lần: `adb shell pm grant com.zen.launcher android.permission.WRITE_SECURE_SETTINGS`
 - App hiện màn hướng dẫn lệnh này khi chưa có quyền
 
-### Module 4: Focus Mode (đợt 4)
-- Lịch khóa app theo giờ
-- Khi mở app từ ZenLauncher trong giờ khóa → chặn ngay tại launcher (không cần quyền)
-- Mở app bằng đường khác: `UsageStatsManager` (quyền `PACKAGE_USAGE_STATS`) + màn chặn qua `SYSTEM_ALERT_WINDOW`; chỉ kiểm tra khi màn hình bật
-- Chốt cơ chế chi tiết khi bắt đầu đợt 4
+### Module 4: Focus Mode (đợt 4 — xong)
+- Một khung giờ + chọn ngày (khung qua đêm thuộc ngày bắt đầu; bắt đầu = kết thúc là 24 giờ), áp cho một danh sách app
+- Chặn ngay tại launcher, không cần quyền: hộp thoại "X bị khoá đến HH:mm", nút "Vẫn mở" bấm được sau 10 giây
+- Chưa làm: chặn khi mở bằng đường khác (Recents, thông báo). Muốn làm thì cần `UsageStatsManager` + `SYSTEM_ALERT_WINDOW` + foreground service (tốn pin, phải khai báo với Play)
 
 ### Đã bỏ (và lý do)
 | Tính năng | Lý do |
