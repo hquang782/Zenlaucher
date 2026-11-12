@@ -38,6 +38,13 @@ Một chạm trên Home để bật:
 • Home cho biết đã chặn bao nhiêu thông báo.
 Tắt Chế độ Zen thì Không làm phiền trở về như trước.
 
+TẬP TRUNG
+• Khoá app gây xao nhãng theo giờ và theo ngày (ví dụ 08:00–17:00, Thứ 2–Thứ 6).
+• Mở app bị khoá phải chờ 10 giây, đủ để bạn nghĩ lại mà vẫn mở được khi thật sự cần.
+
+ĐEN TRẮNG, KHÔNG HIỆU ỨNG
+• Một chạm để màn hình đen trắng và tắt hiệu ứng chuyển động, giúp điện thoại bớt hấp dẫn. Cần cấp quyền một lần qua máy tính (ADB); app hiện sẵn lệnh để bạn sao chép.
+
 NHẸ VÀ RIÊNG TƯ
 • Dưới 2MB, chạy mượt trên máy yếu.
 • Không quảng cáo, không theo dõi, không cần Internet. Không dữ liệu nào rời khỏi máy.
@@ -69,6 +76,13 @@ One tap on the home screen:
 • Calls, alarms and ongoing notifications (music, navigation) always get through.
 • Home shows how many notifications were blocked.
 Turn Zen mode off and Do Not Disturb goes back to how it was.
+
+FOCUS
+• Lock distracting apps on a schedule (for example 08:00–17:00, Monday to Friday).
+• A locked app opens only after a 10-second pause: time to change your mind, still a way out when you need it.
+
+GRAYSCALE, NO ANIMATIONS
+• One tap for a grayscale screen and no animations, so the phone pulls at you less. Needs a one-time grant from a computer (ADB); the app shows the command to copy.
 
 LIGHT AND PRIVATE
 • Under 2 MB, smooth on low-end phones.
@@ -106,6 +120,7 @@ Trả lời "Không" cho mọi câu về bạo lực, nội dung tình dục, ng
 |---|---|---|
 | Truy cập thông báo (`NotificationListenerService`) | Không có form riêng | Do người dùng tự cấp trong Cài đặt Android; app có mô tả trong màn Cài đặt Zen và trong chính sách quyền riêng tư |
 | `EXPAND_STATUS_BAR` | Không | Quyền thường |
+| `WRITE_SECURE_SETTINGS` | Không có form | Chỉ cấp được qua ADB; dùng cho đen trắng và tắt hiệu ứng. Nêu rõ trong mô tả để reviewer không bất ngờ |
 | `QUERY_ALL_PACKAGES`, Accessibility | Không dùng | Danh sách app lấy qua `<queries>` LAUNCHER và `LauncherApps` |
 
 ## Ký ứng dụng
