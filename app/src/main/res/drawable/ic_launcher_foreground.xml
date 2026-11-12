@@ -1,6 +1,16 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp" android:height="108dp"
-    android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#00000000" android:strokeColor="#FFFFFF" android:strokeWidth="4"
-        android:pathData="M54,30a24,24 0,1 1,-0.1 0" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp" android:height="108dp" android:viewportWidth="768" android:viewportHeight="768">
+    <!-- Scaled up so the mark fills the circle mask; its far corner stays inside the 66dp safe zone. -->
+    <group android:pivotX="384" android:pivotY="384" android:scaleX="1.3" android:scaleY="1.3">
+    <!-- Abstract Cairn (Stitch concept 04): three balanced stones and a focus point. -->
+    <path android:pathData="M384,248V288" android:strokeColor="#668AA6C1" android:strokeWidth="2"/>
+    <path android:pathData="M276.0,454H492.0A22.0,22.0 0,0 1 492.0,498H276.0A22.0,22.0 0,0 1 276.0,454Z" android:fillColor="#59000000"/>
+    <path android:pathData="M276.0,446H492.0A22.0,22.0 0,0 1 492.0,490H276.0A22.0,22.0 0,0 1 276.0,446Z" android:strokeColor="#14FFFFFF" android:strokeWidth="1.5"><aapt:attr name="android:fillColor"><gradient android:type="linear" android:startX="254" android:startY="0" android:endX="514" android:endY="0"><item android:offset="0" android:color="#FF242830"/><item android:offset="0.5" android:color="#FF323842"/><item android:offset="1" android:color="#FF1E2228"/></gradient></aapt:attr></path>
+    <path android:pathData="M312.0,390H456.0A20.0,20.0 0,0 1 456.0,430H312.0A20.0,20.0 0,0 1 312.0,390Z" android:fillColor="#59000000"/>
+    <path android:pathData="M312.0,382H456.0A20.0,20.0 0,0 1 456.0,422H312.0A20.0,20.0 0,0 1 312.0,382Z" android:strokeColor="#26FFFFFF" android:strokeWidth="1.5"><aapt:attr name="android:fillColor"><gradient android:type="linear" android:startX="292" android:startY="0" android:endX="476" android:endY="0"><item android:offset="0" android:color="#FF46515D"/><item android:offset="0.5" android:color="#FF697787"/><item android:offset="1" android:color="#FF3A4450"/></gradient></aapt:attr></path>
+    <path android:pathData="M348.0,328H420.0A18.0,18.0 0,0 1 420.0,364H348.0A18.0,18.0 0,0 1 348.0,328Z" android:fillColor="#59000000"/>
+    <path android:pathData="M348.0,320H420.0A18.0,18.0 0,0 1 420.0,356H348.0A18.0,18.0 0,0 1 348.0,320Z" android:strokeColor="#80FFFFFF" android:strokeWidth="1.5"><aapt:attr name="android:fillColor"><gradient android:type="linear" android:startX="330" android:startY="0" android:endX="438" android:endY="0"><item android:offset="0" android:color="#FFFFFFFF"/><item android:offset="0.6" android:color="#FFDCE6EE"/><item android:offset="1" android:color="#FF8AA6C1"/></gradient></aapt:attr></path>
+    <path android:pathData="M377,276A7,7 0,1 1 391,276A7,7 0,1 1 377,276Z" android:fillColor="#FF8AA6C1"/>
+    <path android:pathData="M366,276A18,18 0,1 1 402,276A18,18 0,1 1 366,276Z" android:strokeColor="#408AA6C1" android:strokeWidth="1.5"/>
+    </group>
 </vector>

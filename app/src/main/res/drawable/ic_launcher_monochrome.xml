@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp" android:height="108dp" android:viewportWidth="768" android:viewportHeight="768">
+    <!-- Scaled up so the mark fills the circle mask; its far corner stays inside the 66dp safe zone. -->
+    <group android:pivotX="384" android:pivotY="384" android:scaleX="1.3" android:scaleY="1.3">
+    <!-- Flat cairn for themed (monochrome) icons; the system tints it. -->
+    <path android:pathData="M278.0,446H490.0A24.0,24.0 0,0 1 490.0,494H278.0A24.0,24.0 0,0 1 278.0,446Z" android:fillColor="#FFFFFFFF"/>
+    <path android:pathData="M314.0,378H454.0A22.0,22.0 0,0 1 454.0,422H314.0A22.0,22.0 0,0 1 314.0,378Z" android:fillColor="#FFFFFFFF"/>
+    <path android:pathData="M350.0,312H418.0A20.0,20.0 0,0 1 418.0,352H350.0A20.0,20.0 0,0 1 350.0,312Z" android:fillColor="#FFFFFFFF"/>
+    <path android:pathData="M370,268A14,14 0,1 1 398,268A14,14 0,1 1 370,268Z" android:fillColor="#FFFFFFFF"/>
+    </group>
+</vector>

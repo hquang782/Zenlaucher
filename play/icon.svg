@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+            <defs>
+              <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#181b20"/>
+                <stop offset="60%" stop-color="#121417"/>
+                <stop offset="100%" stop-color="#0a0c0e"/>
+              </linearGradient>
+
+              <radialGradient id="innerGlow4" cx="50%" cy="50%" r="52%">
+                <stop offset="0%" stop-color="#8AA6C1" stop-opacity="0.14"/>
+                <stop offset="65%" stop-color="#8AA6C1" stop-opacity="0.02"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+              </radialGradient>
+
+              <!-- Stone 1 (Bottom foundation - largest) -->
+              <linearGradient id="stoneBase" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#242830"/>
+                <stop offset="50%" stop-color="#323842"/>
+                <stop offset="100%" stop-color="#1e2228"/>
+              </linearGradient>
+
+              <!-- Stone 2 (Middle - balanced) -->
+              <linearGradient id="stoneMid" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#46515d"/>
+                <stop offset="50%" stop-color="#697787"/>
+                <stop offset="100%" stop-color="#3a4450"/>
+              </linearGradient>
+
+              <!-- Stone 3 (Top crown - pinnacle illuminated) -->
+              <linearGradient id="stoneTop" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="60%" stop-color="#dce6ee"/>
+                <stop offset="100%" stop-color="#8AA6C1"/>
+              </linearGradient>
+            </defs>
+
+            <g>
+              <!-- Base Canvas -->
+              <rect width="512" height="512" fill="url(#bgGrad4)"/>
+              <rect width="512" height="512" fill="url(#innerGlow4)"/>
+
+              <!-- Central Zen Plumb-Line / Gravity Equilibrium Line -->
+              <line x1="256" y1="104" x2="256" y2="408" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.25"/>
+              <line x1="256" y1="120" x2="256" y2="160" stroke="#8AA6C1" stroke-opacity="0.4" stroke-width="1.25"/>
+              
+              <!-- Subtle Background Geometric Aura Circles -->
+              <circle cx="256" cy="256" r="150" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+              <circle cx="256" cy="256" r="110" fill="none" stroke="#8AA6C1" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="3 5"/>
+
+              <!-- CAIRN LAYER 1: Bottom Foundation Bar (Width: 260px, Height: 44px) -->
+              <!-- Cast shadow under foundation -->
+              <rect x="126" y="324" width="260" height="44" rx="22" fill="#000000" fill-opacity="0.45" filter="blur(10px)"/>
+              <rect x="126" y="318" width="260" height="44" rx="22" 
+                    fill="url(#stoneBase)" 
+                    stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.25"/>
+              <!-- Foundation anchor highlight -->
+              <line x1="156" y1="324" x2="356" y2="324" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1" stroke-linecap="round"/>
+
+              <!-- CAIRN LAYER 2: Middle Stone Bar (Width: 184px, Height: 40px) -->
+              <!-- Soft contact shadow on bottom stone -->
+              <rect x="164" y="258" width="184" height="40" rx="20" fill="#000000" fill-opacity="0.5" filter="blur(6px)"/>
+              <rect x="164" y="254" width="184" height="40" rx="20" 
+                    fill="url(#stoneMid)" 
+                    stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.25"/>
+              <line x1="190" y1="260" x2="322" y2="260" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" stroke-linecap="round"/>
+
+              <!-- CAIRN LAYER 3: Top Pinnacle Stone (Width: 108px, Height: 36px) -->
+              <!-- Contact shadow on middle stone -->
+              <rect x="202" y="196" width="108" height="36" rx="18" fill="#000000" fill-opacity="0.45" filter="blur(6px)"/>
+              <rect x="202" y="192" width="108" height="36" rx="18" 
+                    fill="url(#stoneTop)" 
+                    stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+
+              <!-- Zen Balancing Meridian Point above the Cairn -->
+              <circle cx="256" cy="148" r="4" fill="#8AA6C1"/>
+              <circle cx="256" cy="148" r="14" fill="none" stroke="#8AA6C1" stroke-opacity="0.25" stroke-width="1"/>
+
+              
+            </g>
+          </svg>

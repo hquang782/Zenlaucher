@@ -6,3 +6,4 @@ local.properties
 *.iml
 .superpowers/
 .kotlin/
+keystore.properties
